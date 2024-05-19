@@ -21,6 +21,9 @@ local default = {
     enable = false,
     command = {},
   },
+  is_available = function ()
+    return true
+  end
 }
 
 local isOptions = is.TableOf({
@@ -36,6 +39,7 @@ local isOptions = is.TableOf({
     enable = is.OptionalOf(is.Boolean),
     command = is.OptionalOf(is.ListOf(is.String)),
   })),
+  is_available = is.OptionalOf(is.Function),
 })
 
 ---@param msg string

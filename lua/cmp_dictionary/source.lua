@@ -44,6 +44,10 @@ local function decapitalize(str)
   return l
 end
 
+function source:is_available()
+  return config.options.is_available()
+end
+
 function source:_update()
   local opts = config.options
   self.dict:update(opts.paths)
